@@ -1,0 +1,20 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: sp_back       #项目名
+  datasource: # 配置数据库
+    username: root
+    password: 12345
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test   #数据库名
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml #扫描resources下的mapper文件夹下的xml文件
+  type-aliases-package: org.ymx.sp_back.pojo #实体类所在包，定义别名
+#访问数据库显示sql
+logging:
+  level:
+    com:
+      example:
+        mapper: debug

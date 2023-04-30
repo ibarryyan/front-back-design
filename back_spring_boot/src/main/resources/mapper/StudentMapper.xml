@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ymx.sp_back.dao.xmlMapper.XmlStudentMapper">
+    <!-- 添加学生-->
+    <insert id="saveStudent" parameterType="org.ymx.sp_back.pojo.Student" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into student(name, age)
+        values (#{name}, #{age})
+    </insert>
+    <!--查看学生根据ID-->
+    <select id="findStudentById" parameterType="integer" resultType="org.ymx.sp_back.pojo.Student">
+        select *
+        from student
+        where id = #{id}
+    </select>
+    <!--查看全部学生-->
+    <select id="findAllStudent" resultMap="studentResult">
+        select *
+        from student
+    </select>
+    <!--删除学生根据ID-->
+    <delete id="removeStudentById" parameterType="integer">
+        delete
+        from student
+        where id = #{id}
+    </delete>
+    <!--修改学生根据ID-->
+    <update id="updateStudentById" parameterType="org.ymx.sp_back.pojo.Student">
+        update student
+        set name=#{name},
+            age=#{age}
+        where id = #{id}
+    </update>
+    <!--查询结果集-->
+    <resultMap id="studentResult" type="org.ymx.sp_back.pojo.Student">
+        <result column="id" javaType="INTEGER" jdbcType="INTEGER" property="id"/>
+        <result column="name" javaType="STRING" jdbcType="VARCHAR" property="name"/>
+        <result column="age" javaType="INTEGER" jdbcType="INTEGER" property="age"/>
+    </resultMap>
+</mapper>
