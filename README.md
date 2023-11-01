@@ -84,6 +84,8 @@ https://blog.csdn.net/Mr_YanMingXin/article/details/130451171
 - 后端返回值需要规范
 - 安全性问题
 - Go的DB操作换成ORM可节省大量代码
+- API生成和相关文档工具使用
+- http常用状态码
 - ......
 
 ---
