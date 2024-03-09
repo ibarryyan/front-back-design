@@ -1,5 +1,16 @@
-# front-back-design
-前后端分离设计Demo，包含：
+# 前后端分离Demo
+
+目录说明：
+
+- back_go：Go后端（Gin）
+
+- back_spring_boot：Java后端（Spring Boot）
+
+- front_vue：Vue前端
+
+- sql：数据表
+
+包含：
 
 - Spring Boot + Vue前后端分离
 - Gin + Vue前后端分离
